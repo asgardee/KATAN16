@@ -1,16 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Engineer: David Asgar-Deen
 -- 
 -- Create Date: 04/13/2020 05:38:38 PM
--- Design Name: 
+-- Design Name: KATAN16
 -- Module Name: KATAN16 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
+-- Project Name: KATAN16+
+-- Target Devices: xc7z010clg400-1 
+-- Description: Encryption of a 16-bit input text using the KATAN architecture
+-- coupled with an integrated start signal.
 -- 
--- Dependencies: 
+-- Dependencies: RoundFunc.vhd KeyExpansion.vhd RoundFunc.vhd
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
@@ -34,7 +33,7 @@ end KATAN16;
 architecture Behavioral of KATAN16 is
 
     -- Used to run through all 254 rounds and update the IR term
-    component RoundCount_Bare is
+    component RoundCount is
         Port ( clk     : in    STD_LOGIC := '0';   
                Start   : in    STD_LOGIC := '0';  -- Starts the counter
                Looping : inout STD_LOGIC := '0';  -- Flagged high system is looping
@@ -43,13 +42,13 @@ architecture Behavioral of KATAN16 is
     end component;  
     
     -- Used to generate the key expansion
-    component KeyExpansion_Bare is
+    component KeyExpansion is
     Port ( keyi : in  STD_LOGIC_VECTOR (79 downto 0);  -- Input key 
            keyo : out STD_LOGIC_VECTOR (79 downto 0)); -- Expanded output key 
     end component;  
     
     -- Used to update the encrypted text
-    component RoundFunc_Bare is
+    component RoundFunc is
     port (
         keya    : in    STD_LOGIC; -- Key expansion terms       
         keyb    : in    STD_LOGIC; -- Key expansion terms   
@@ -73,7 +72,7 @@ begin
     keyb <= keyo(0);
     
     -- Port mapping for the round counter
-    RoundCounter : RoundCount_Bare port map (
+    RoundCounter : RoundCount port map (
         clk     => clk    ,
         Start   => Start  ,
         Looping => Looping,
@@ -82,13 +81,13 @@ begin
     );  
     
     -- Port mapping for the round counter
-    KeyExpans : KeyExpansion_Bare port map (
+    KeyExpans : KeyExpansion port map (
         keyi => keyi,
         keyo => keyo      
     );  
     
     -- Port mapping for the round counter
-    RoundFunc : RoundFunc_Bare port map (
+    RoundFunc : RoundFunc port map (
         keya    => keya   ,
         keyb    => keyb   ,
         IR      => IR     ,

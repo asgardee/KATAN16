@@ -1,14 +1,13 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Engineer: David Asgar-Deen
 -- 
 -- Create Date: 04/13/2020 05:17:12 PM
--- Design Name: 
+-- Design Name: KATAN16
 -- Module Name: RoundCount - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
+-- Project Name: KATAN16+
+-- Target Devices: xc7z010clg400-1 
+-- Description: Round counter used for KATAN16 cipher. This module also provides
+-- the irregular update term used by the round function.
 -- 
 -- Dependencies: 
 -- 

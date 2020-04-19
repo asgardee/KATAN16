@@ -1,3 +1,20 @@
+----------------------------------------------------------------------------------
+-- Engineer: David Asgar-Deen
+-- 
+-- Create Date: 04/13/2020 05:38:38 PM
+-- Design Name: KATAN16
+-- Module Name: KATAN16_tb - Behavioral
+-- Project Name: KATAN16+
+-- Target Devices: xc7z010clg400-1 
+-- Description: Testbench for the KATAN16 cipher
+-- 
+-- Dependencies: KATAN16.vhd
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

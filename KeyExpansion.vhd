@@ -1,14 +1,13 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Engineer: David Asgar-Deen
 -- 
 -- Create Date: 04/13/2020 05:00:05 PM
--- Design Name: 
+-- Design Name: KATAN16
 -- Module Name: KeyExpansion - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
+-- Project Name: KATAN16+
+-- Target Devices: xc7z010clg400-1 
+-- Description: Expansion of the input key used in the round function in the 
+-- KATAN16 cipher.
 -- 
 -- Dependencies: 
 -- 
