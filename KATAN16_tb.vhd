@@ -1,13 +1,13 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity KATAN16_BareV2_tb is
+entity KATAN16_tb is
 --  Port ( );
-end KATAN16_BareV2_tb;
+end KATAN16_tb;
 
-architecture Behavioral of KATAN16_BareV2_tb is
+architecture Behavioral of KATAN16_tb is
 
-    component KATAN16_BareV2 is
+    component KATAN16 is
     port (
         clk        : in    STD_LOGIC := '0';           
         Start      : in    STD_LOGIC := '0';             -- Starts the counter
@@ -28,7 +28,7 @@ architecture Behavioral of KATAN16_BareV2_tb is
 begin
 
     -- Port mapping the KATAN16 system
-    Encrypt : KATAN16_BareV2 port map (
+    Encrypt : KATAN16 port map (
         clk        => clk       ,
         Start      => Start     ,
         plaintext  => plaintext ,

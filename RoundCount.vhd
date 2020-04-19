@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 04/13/2020 05:17:12 PM
 -- Design Name: 
--- Module Name: RoundCount_Bare - Behavioral
+-- Module Name: RoundCount - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -22,15 +22,15 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity RoundCount_Bare is
+entity RoundCount is
     Port ( clk     : in    STD_LOGIC := '0';   
            Start   : in    STD_LOGIC := '0';  -- Starts the counter
            Looping : inout STD_LOGIC := '0';  -- Flagged high system is looping
            Finish  : out   STD_LOGIC := '0';  -- Flagged high when LFSR loops back
            IR      : out   STD_LOGIC := '1'); -- Irregular update term (MSB of LFSR)
-end RoundCount_Bare;
+end RoundCount;
 
-architecture Behavioral of RoundCount_Bare is
+architecture Behavioral of RoundCount is
 
 constant LFSR_ini : std_logic_vector(7 downto 0) := (others => '1'); -- Initial state for round count LFSR
 constant LFSR_ini_next : std_logic_vector(7 downto 0) := (0 => '0', others => '1'); -- Initial state for round count LFSR

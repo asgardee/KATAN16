@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 04/13/2020 05:38:38 PM
 -- Design Name: 
--- Module Name: KATAN16_BareV2 - Behavioral
+-- Module Name: KATAN16 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -22,16 +22,16 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity KATAN16_BareV2 is
+entity KATAN16 is
     port (
         clk        : in    STD_LOGIC := '0';           
         Start      : in    STD_LOGIC := '0';             -- Starts the counter
         plaintext  : in    std_logic_vector(15 downto 0) := (others => '0'); -- 16 bit input/ouput text
         key        : in    std_logic_vector(79 downto 0) := (others => '1'); -- 80 bit key
         ciphertext : out   std_logic_vector(15 downto 0));
-end KATAN16_BareV2;
+end KATAN16;
 
-architecture Behavioral of KATAN16_BareV2 is
+architecture Behavioral of KATAN16 is
 
     -- Used to run through all 254 rounds and update the IR term
     component RoundCount_Bare is

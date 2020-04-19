@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 04/13/2020 05:00:05 PM
 -- Design Name: 
--- Module Name: KeyExpansion_Bare - Behavioral
+-- Module Name: KeyExpansion - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -23,12 +23,12 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 
-entity KeyExpansion_Bare is
+entity KeyExpansion is
     Port ( keyi : in  STD_LOGIC_VECTOR (79 downto 0);  -- Input key 
            keyo : out STD_LOGIC_VECTOR (79 downto 0)); -- Expanded output key 
-end KeyExpansion_Bare;
+end KeyExpansion;
 
-architecture Behavioral of KeyExpansion_Bare is
+architecture Behavioral of KeyExpansion is
 
 -- Hold outputs of non-linear key expansion terms
 signal keya, keyb : std_logic;

@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 04/13/2020 05:22:41 PM
 -- Design Name: 
--- Module Name: RoundFunc_Bare - Behavioral
+-- Module Name: RoundFunc - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -22,16 +22,16 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity RoundFunc_Bare is
+entity RoundFunc is
     port (
         keya    : in    STD_LOGIC; -- Key expansion terms       
         keyb    : in    STD_LOGIC; -- Key expansion terms   
         IR      : in    STD_LOGIC; -- Irregular update term      
         intext  : in    std_logic_vector(15 downto 0);  -- 16 bit input text
         outtext : out   std_logic_vector(15 downto 0)); -- 16 bit output text
-end RoundFunc_Bare;
+end RoundFunc;
 
-architecture Behavioral of RoundFunc_Bare is
+architecture Behavioral of RoundFunc is
     
     -- Intermediate terms for signal expansion
     signal L1, L1s : std_logic_vector(5 downto 0);
