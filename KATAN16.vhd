@@ -107,8 +107,6 @@ begin
                 -- Update next state logic
                 keyi <= keyo;
                 intext <= outtext;
-            elsif Finish = '1' then
-                ciphertext <= outtext;
             end if;
            
             if Finish = '1' then
